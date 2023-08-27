@@ -22,7 +22,7 @@ playButton.addEventListener('click', startGame)
 function startGame() {
     resetGame()
     playButton.style.visibility = "hidden"
-    intervalID = setInterval(makeTarget, 5000)
+    intervalID = setInterval(makeTarget, 1000)
 }
 
 function makeTarget() {

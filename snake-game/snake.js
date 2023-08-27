@@ -19,6 +19,7 @@ let gridSquareSize = 0;
 let speed = "slow";
 let score = 0;
 let pauseClicked = false;
+let gameLost = false;
 const speeds = new Map([
   ["slow", 1000],
   ["verySlow", 1500],
@@ -45,13 +46,13 @@ window.onload = function () {
 function checkDirection(e) {
     let key = e.key
     if (!directionChangedThisLoop){
-        if (key === "a"){
+        if (key === "a" || key === "A"){
             nextDirection -=1
             if (nextDirection ===0) {
                 nextDirection = 4
             }
             directionChangedThisLoop = true
-        } else if (key ==="d") {
+        } else if (key ==="d" || key === "D") {
             directionChangedThisLoop = true
             nextDirection += 1
             if (nextDirection === 5) {
@@ -62,20 +63,20 @@ function checkDirection(e) {
         
 }
 function startGame() {
-  speed = speeds.get(speedField.value);
-  gameIntervalId = setInterval(moveForward, speed);
-  directionChangedThisLoop = false;
+  if (!gameLost) {
+    speed = speeds.get(speedField.value);
+    gameIntervalId = setInterval(moveForward, speed);
+    directionChangedThisLoop = false;
+  }
 
 }
 function moveForward() {
-    // console.log("befor:", snakeDirection)
     let prevDir = nextDirection
     for (let i = 0; i < 5; i++) {
         let temp = snakeDirection[i]
         snakeDirection[i] =prevDir
         prevDir = temp
     }
-    // console.log("after:", snakeDirection)
 
   if (!checkForCollision()){
   for (let i = 0; i < snake.length; i++) {
@@ -83,7 +84,6 @@ function moveForward() {
     let currX = +bodyPart.style.left.slice(0, -2);
     let currY = +bodyPart.style.top.slice(0, -2);
     let dir = snakeDirection[i];
-    // console.log(dir);
     if (dir === 1) {
       let newY = currY - gridSquareSize;
       bodyPart.style.top = newY + "px";
@@ -117,25 +117,21 @@ function checkForCollision() {
   ) {
     borderCollision();
     pauseGame();
+    gameLost = true;
     return true;
   }
   let bodyPart = snake[3];
   let bodyPartX = +bodyPart.style.left.slice(0, -2);
   let bodyPartY = +bodyPart.style.top.slice(0, -2);
-  
-  console.log(headX - 1> bodyPartX && headX -gridSquareSize - 1 <= bodyPartX && headDir === 4)
-  console.log(headX + 1 < bodyPartX && headX +gridSquareSize + 1 >= bodyPartX && headDir === 2)
-  console.log(headY -1 < bodyPartY && headY +gridSquareSize + 1 >= bodyPartY && headDir === 3)
-  console.log(headY,bodyPartY)
-  console.log(headY - 1 > bodyPartY && headY -gridSquareSize - 1 <= bodyPartY && headDir === 1)
   if (
-    (headX - 1> bodyPartX && headX -gridSquareSize - 1 <= bodyPartX && headDir === 4) ||
-    (headX + 1< bodyPartX && headX +gridSquareSize + 1 >= bodyPartX && headDir === 2) ||
-    (headY - 1< bodyPartY && headY +gridSquareSize + 1 >= bodyPartY && headDir === 3) ||
-    (headY - 1> bodyPartY && headY -gridSquareSize - 1 <= bodyPartY && headDir === 1)
+    (headDir === 3 && headX + .001 >= bodyPartX && headX - .001 <= bodyPartX &&  headY < bodyPartY && headY + gridSquareSize + .1 >= bodyPartY) ||  // Collision going down
+    (headDir === 4 && headY + .001 >= bodyPartY && headY - .001 <= bodyPartY && headX > bodyPartX && headX - gridSquareSize - .1 <= bodyPartX) ||  // Collision going left
+    (headDir === 1 && headX + .001 >= bodyPartX && headX - .001 <= bodyPartX && headY > bodyPartY && headY - gridSquareSize - .1 <= bodyPartY) ||  // Collision going up
+    (headDir === 2 && headY + .001 >= bodyPartY && headY - .001 <= bodyPartY && headX < bodyPartX && headX + gridSquareSize + .1 >= bodyPartX)  // Collision going right
   ) {
     selfCollision();
     pauseGame();
+    gameLost = true;
     return true;
   }
    
@@ -161,6 +157,7 @@ function endGame() {
   scoreField.innerHTML = 0;
   snakeDirection = [1, 1, 1, 1, 1];
   nextDirection = 1
+  gameLost = false;
   directionChangedThisLoop = false;
   for (let i = 0; i < 5; i++) {
     let bodyPart = snake[i];
