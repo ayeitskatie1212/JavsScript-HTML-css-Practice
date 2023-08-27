@@ -1,0 +1,34 @@
+#caption {
+	padding: 10px;
+	box-sizing: border-box;
+	color: white;
+	font-size: 14pt;
+	font-family: sans-serif;
+	background-color: #008800;
+	opacity: 0.5;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+#photoSection {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+#forwardOverlay {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+}
+#backwardOverlay {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+body {
+    margin: 0px;
+}

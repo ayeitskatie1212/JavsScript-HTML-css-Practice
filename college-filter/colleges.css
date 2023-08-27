@@ -1,0 +1,106 @@
+#body {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr ;
+    grid-template-rows: 70px 1fr;
+    font-family: sans-serif;
+}
+th, tr, td, table {
+    border-width: 0px 1px;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+    font-size: 14px
+}
+#lastRow {
+    border-bottom: 1px black solid;
+}
+th {
+    border-width: 1px;
+    background-color: #555555;
+    color:white;
+    font-family: sans-serif;
+    padding: 3px;
+}
+td{
+    padding-left: 5px;
+}
+tr {
+    height: 25px;
+}
+.nameCol {
+    width: 115px
+}
+.SATCol {
+    width: 70px;
+}
+.oddRows {
+    background-color: #f2f2f2
+}
+h1 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+#filterBox {
+    
+    border: black 1px solid;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+}
+#secondRow {
+grid-column: 2 / 3;
+grid-row: 2 / 3;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+label, .textRowContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 10px;
+}
+.flexRowContainer {
+    display: flex;
+    flex-direction: column;
+}
+h5, h6 {
+    margin: 0px;
+    width: 140px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 10px;
+}
+h2 {
+    margin: 0px;
+    background: #555555;
+    text-align: center;
+    color: white;
+}
+#radioContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 13px;
+}
+.tuitionCol {
+    width: 80px;
+}
+input[type="radio"] {
+    margin-right: 5px;
+}
+input[type="text"] {
+    width: 90px;
+    height: 15px;
+}
+#boxAndButton {
+    margin: 0px 30px;
+}
+#updateButton {
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: #DDDDDD;
+}

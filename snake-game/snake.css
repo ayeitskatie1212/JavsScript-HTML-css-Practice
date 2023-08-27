@@ -1,0 +1,32 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* grid-template-columns: 1fr 170px; */
+    flex-direction: row;
+    margin: 0px;
+}
+#playingField {
+    border: 20px red solid;
+}
+#controlBox {
+    width: 160px;
+    margin-left: 10px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+#head, #body1, #body2, #body3, #body4 {
+    border: 1px solid white;
+    position: absolute;
+}
+#head {
+    background-color: black;
+}
+#body1, #body2, #body3, #body4 {
+    background-color: red;
+}

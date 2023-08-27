@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="snake.css" type="text/css" />
+    <script defer src="snake.js"></script>
+  </head>
+  <body id="body">
+    <div id="playingField">
+        <div id="head"></div>
+        <div id="body1"></div>
+        <div id="body2"></div>
+        <div id="body3"></div>
+        <div id="body4"></div>
+    </div>
+    <div id="controlBox">
+        <div>Score: <span id="score"></span></div>
+        <label>
+            <select id="speed">
+                <option value="fast">Fast</option>
+                <option value="medium">Medium</option>
+                <option value="slow">Slow</option>
+                <option value="verySlow">Very Slow</option>
+            </select>
+        </label>
+        <div id="buttonsBox">
+            <button id="startButton">Start</button>
+            <button id="pauseButton">Pause</button>
+            <button id="endButton">End</button>
+        </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bay Area Colleges and Universities</title>
+    <link rel="stylesheet" href="colleges.css" type="text/css">
+    <script defer src="colleges.js"></script>
+  </head>
+  <body id="body">
+    <h1>Bay Area Colleges and Universities</h1>
+    <div id="secondRow">
+      <div id="tableWrapper">
+        <table id="table">
+          <tr>
+            <th class="nameCol">Name</th>
+            <th class="SATCol">SAT High</th>
+            <th class="SATCol">SAT Low</th>
+            <th class="tuitionCol">Tuition</th>
+          </tr>
+        </table>
+      </div>
+      <div id="boxAndButton">
+        <div id="filterBox">
+          <h2>Search Criteria</h2>
+          <form id="searchSpecifications">
+            <div id="radioContainer">
+              <label>
+                <input type="radio" name="classification" value="public">
+                Public
+              </label>
+              <label>
+                <input type="radio" name="classification" value="private">
+                Private
+              </label>
+              <label>
+                <input type="radio" name="classification" value="dontcare" id="dontcare">
+                Don't Care
+              </label>
+            </div>
+            <div class="textRowContainer">
+              <div class="flexRowContainer">
+                <h5>Maximum Tuition</h5>
+                <h6>Leave blank for don't care</h6>
+              </div>
+              <input type="text" id="maxTuition">
+            </div>
+            <div class="textRowContainer">
+              <div class="flexRowContainer">
+                <h5>Maximum High SAT</h5>
+                <h6>Leave blank for don't care</h6>
+              </div>
+              <input type="text" id="maxSAT">
+            </div>
+            <div class="textRowContainer">
+              <div class="flexRowContainer">
+                <h5>Minimum Low SAT</h5>
+                <h6>Leave blank for don't care</h6>
+              </div>
+              <input type="text" id="minSAT">
+            </div>
+          </form>
+        </div>
+        <input type="button" id="updateButton" value="Update">
+      </div>
+    </div>
+  </body>
+</html>

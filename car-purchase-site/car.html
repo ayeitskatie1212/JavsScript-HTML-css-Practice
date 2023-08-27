@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Configure Your GT Super Sportscar</title>
+    <link href="./car.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="main">
+    <h1>Configure Your GT Super Sportscar</h1>
+    <div id="column1">
+      <div class="boxes">
+        <div class="h2Label">
+          <h2>Configuration</h2>
+        </div>
+        <form id="configuration">
+          <table>
+            <tr>
+              <td>
+                <input type="radio" id="manual" name="configuration" class="radio" value="manual" />
+                <label for="manual">
+                  <span>GT Manual</span>
+                  <span id="manualPrice"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="automatic"
+                  name="configuration"
+                  class="radio"
+                  value="automatic"
+                />
+                <label for="automatic">
+                  <span>GT Automatic</span>
+                  <span id="automaticPrice"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="sManual"
+                  name="configuration"
+                  class="radio"
+                  value="sManual"
+                />
+                <label for="sManual">
+                  <span>GT-S Manual</span>
+                  <span id="sManualPrice"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="sportshift"
+                  name="configuration"
+                  class="radio"
+                  value="sportshift"
+                />
+                <label for="sportshift">
+                  <span>GT-S Sportshift</span>
+                  <span id="sportshiftPrice"></span>
+                </label>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="boxes">
+        <div class="h2Label">
+          <h2>Factory Options</h2>
+        </div>
+        <form id="factoryOptions">
+          <table>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="combo1"
+                  name="factoryOptions"
+                  class="radio"
+                  value="combo1"
+                />
+                <label for="combo1">
+                  <span>Option Combo #1</span>
+                  <span id="combo1Price"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <ul>
+                  <li>Power Windows, Doors, Cruise Control</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="combo2"
+                  name="factoryOptions"
+                  class="radio"
+                  value="combo2"
+                />
+                <label for="combo2">
+                  <span>Option Combo #2</span>
+                  <span id="combo2Price"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <ul>
+                  <li>Rear Spoiler and Fog Lamps</li>
+                  <li>Keyless Entry</li>
+                  <li>Power Tilt & Slide Moonroof</li>
+                  <li>Power Windows, Doors, Cruise Control</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="noCombo"
+                  name="factoryOptions"
+                  class="radio"
+                  value="noCombo"
+                />
+                <label for="noCombo">
+                  <span>No Combo</span>
+                  <span id="noComboPrice"></span>
+                </label>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="boxes">
+        <div class="h2Label">
+          <h2>Dealer Options</h2>
+        </div>
+        <form id="dealerOptions">
+          <table>
+            <tr>
+              <td>
+                <input type="checkbox" name="stereo" id="stereo" class="checkbox" />
+                <label for="stereo"
+                  ><span>Upgraded Stereo System</span><span id="stereoPrice"></span
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="security" id="security" class="checkbox" />
+                <label for="security"
+                  ><span>VIP Security System</span><span id="securityPrice"></span
+                ></label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="mirror" id="mirror" class="checkbox" />
+                <label for="mirror"
+                  ><span>Auto-Dimming Mirror</span><span id="mirrorPrice"></span
+                ></label>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="boxes">
+        <div class="h2Label">
+          <h2>Total Price</h2>
+        </div>
+        <div class="wrapper">
+          <input type="text" id="total" />
+          <input type="button" id="totalButton" value="Calculate Total" />
+        </div>
+      </div>
+    </div>
+    <div id="column2">
+      <div class="boxes">
+        <div class="h2Label">
+          <h2>Choose A Color</h2>
+        </div>
+        <div class="wrapper">
+          <select id="color" size="5">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="silver">Silver</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+          </select>
+          <img src="red.jpg" id="image" alt="Car Photo" />
+        </div>
+      </div>
+    </div>
+    <script src="car.js"></script>
+  </body>
+</html>

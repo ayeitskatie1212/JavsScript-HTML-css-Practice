@@ -1,0 +1,31 @@
+#targetArea {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border: 1px solid black;
+}
+div {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+#scoreBox {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 250px;
+}
+body {
+    width: 1200px;
+    position: relative
+}
+html {
+    width: 1200px;
+}
+button {
+    background-color: lightgray;
+    width: 100px;
+    
+}

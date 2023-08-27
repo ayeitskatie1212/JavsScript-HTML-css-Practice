@@ -1,0 +1,11 @@
+.flexBox {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    background-color: lightgray;
+    width: 120px;
+}
+label {
+    margin: 5px;
+}

@@ -1,0 +1,68 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+#body {
+  display: grid;
+  grid-template-rows: 25px calc(100% - 50px) 25px;
+  grid-template-columns: 25px calc(100% - 185px) 160px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+#mapFrame {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  overflow: hidden;
+  border: 20px solid grey;
+  width: calc(100% - 40px);
+  position: relative;
+}
+img {
+  position: absolute;
+}
+#buttonContainer {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 20px 40px 40px 40px 20px;
+  grid-template-rows: 1fr 100px 40px 40px 40px 1fr;
+  align-items: center;
+}
+#zoomContainer {
+  display: flex;
+  justify-content: center;
+  grid-row: 2/ 3;
+  grid-column: 1/ 6;
+}
+button {
+  padding: 0px;
+  background-color: grey;
+  border-radius: 5px;
+  align-items: center;
+  line-height: 0px;
+  height: 40px;
+  width: 40px;
+}
+#zoomIn,
+#zoomOut {
+  margin: 0px 10px;
+}
+#leftNavigation {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+#rightNavigation {
+  grid-column: 4 / 5;
+  grid-row: 4 /5;
+}
+#upNavigation {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+#downNavigation {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+}
