@@ -1,4 +1,4 @@
-# Some simple websites that focus mainly on JS skills
+# Simple websites to improve JS skills
 
 Written using only JavaScript's standard library.
 
